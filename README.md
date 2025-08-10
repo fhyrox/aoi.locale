@@ -89,6 +89,9 @@ locale.init(client, {
     // Auto language detection (always enabled)
     autoLanguage: true,
     
+    // Debug mode for detailed logging
+    debug: false,
+    
     // User language source template
     languageSource: 'getUserVar[language;{userId}]',
     
@@ -278,15 +281,29 @@ client.command({
 
 ## 🔍 Debugging
 
-Enable debug logs to see language detection process:
+Enable debug mode to see detailed language detection process:
 
 ```javascript
-// Console output example:
+// Enable debug mode
+const locale = new AoiLocale();
+locale.init(client, {
+    debug: true,  // Enable detailed logging
+    localeDir: './locales',
+    languageSource: 'getUserVar[language;{userId}]'
+});
+```
+
+**Console output with debug enabled:**
+```
 [aoi.locale] Starting language detection for user: 123456789
 [aoi.locale] Trying user language source: getUserVar[language;{userId}]
-[aoi.locale] ✅ aoi.js interpreter returned: tr
+[aoi.locale] User language source returned: tr
 [aoi.locale] ✅ Using user language: tr
 ```
+
+**Debug vs Normal Mode:**
+- **debug: false** (default) - Only errors and warnings
+- **debug: true** - Detailed step-by-step language detection logs
 
 ## 🚨 Error Handling
 
