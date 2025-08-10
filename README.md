@@ -9,7 +9,7 @@ A powerful internationalization (i18n) module for aoi.js Discord bots with autom
 - 🔄 **Automatic Language Detection** - Detects user language from database variables
 - 🎯 **Smart Fallback System** - User → Guild → Default language priority
 - 📁 **Modular Architecture** - Clean, organized codebase
-- 🔧 **Template System** - Pre-built language templates in `examples/` directory
+- 🔧 **Auto Template Creation** - Automatically creates example locale files
 - ⚡ **aoi.js Interpreter Integration** - Uses real aoi.js interpreter for variable access
 - 🎨 **Flexible Syntax** - Multiple parameter formats with semicolon separation
 - 💾 **Database Fallback** - Direct database access when interpreter fails
@@ -65,17 +65,9 @@ client.command({
 
 ```
 your-bot/
-├── examples/              # Language templates
-│   ├── en.json           # English template
-│   ├── tr.json           # Turkish template
-│   └── ...               # Add more languages
-├── locales/              # Runtime language files (auto-generated)
-│   ├── en.json
-│   ├── tr.json
-│   └── ...
-├── src/
-│   ├── index.js          # Main module
-│   └── loader.js         # Language file loader
+├── locales/              # Language files (auto-generated if missing)
+│   ├── en.json           # English language file
+│   └── ...               # Add more languages as needed
 └── index.js              # Your bot file
 ```
 
@@ -134,7 +126,7 @@ $locale[welcome;language?|en]              // Fallback language syntax
 
 ## 📝 Language File Format
 
-### examples/en.json
+### locales/en.json
 ```json
 {
     "welcome": "Welcome to our server!",
@@ -150,26 +142,6 @@ $locale[welcome;language?|en]              // Fallback language syntax
     "help": {
         "title": "Bot Commands",
         "description": "List of available commands"
-    }
-}
-```
-
-### examples/tr.json
-```json
-{
-    "welcome": "Sunucumuza hoş geldiniz!",
-    "hello": "Merhaba {user}!",
-    "success": "İşlem başarıyla tamamlandı!",
-    "error": "Bir hata oluştu!",
-    "user": {
-        "profile": {
-            "name": "Kullanıcı: {user}",
-            "level": "Seviye: {level}"
-        }
-    },
-    "help": {
-        "title": "Bot Komutları",
-        "description": "Mevcut komutların listesi"
     }
 }
 ```
@@ -200,61 +172,6 @@ $locale[hello;$username]                   // {0} in translation
 locale.addLocale('es', {
     "welcome": "¡Bienvenido a nuestro servidor!",
     "hello": "¡Hola {user}!"
-});
-```
-
-## 🎮 Example Commands
-
-### Language Switcher
-```javascript
-client.command({
-    name: 'setlang',
-    $if: "old",
-    code: `
-        $if[$message[1]==en]
-            $setUserVar[language;en;$authorID]
-            $locale[success;en]
-        $elseif[$message[1]==tr]
-            $setUserVar[language;tr;$authorID]
-            $locale[success;tr]
-        $endelseif
-        $else
-            Please specify a language: \`setlang en\` or \`setlang tr\`
-        $endif
-    `
-});
-```
-
-### Multi-language Welcome
-```javascript
-client.command({
-    name: 'welcome',
-    code: `$locale[welcome]`
-});
-```
-
-### Profile with Parameters
-```javascript
-client.command({
-    name: 'profile',
-    code: `
-        **$locale[user.profile.name;user:$username]**
-        $locale[user.profile.level;level:$getUserVar[level;$authorID]]
-    `
-});
-```
-
-### Help Command
-```javascript
-client.command({
-    name: 'help',
-    code: `
-        **$locale[help.title]**
-        
-        \`welcome\` - $locale[help.welcome]
-        \`hello\` - $locale[help.hello]
-        \`setlang <en/tr>\` - $locale[help.setlang]
-    `
 });
 ```
 
