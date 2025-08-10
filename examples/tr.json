@@ -1,0 +1,37 @@
+{
+    "welcome": "Sunucumuza hoş geldiniz!",
+    "goodbye": "Hoşçakal, sonra görüşürüz!",
+    "hello": "Merhaba {user}!",
+    "error": "Bir hata oluştu!",
+    "success": "İşlem başarıyla tamamlandı!",
+    "available_languages": "Mevcut Diller",
+    "current_language": "Şu Anki Dil",
+    "your_language": "Diliniz",
+    "no_permission": "Bu komutu kullanma yetkiniz yok!",
+    "addlang_usage": "Kullanım: 1addlang <kod> <hoş geldin mesajı>",
+    "language_added": "Dil başarıyla eklendi",
+    "ping_response": "🏓 Pong! {ping}ms",
+    "server_info": "Hoş geldin {user}, {server} sunucusuna!",
+    "user": {
+        "profile": {
+            "name": "Kullanıcı: {user}",
+            "level": "Seviye: {level}"
+        }
+    },
+    "help": {
+        "title": "🌍 aoi.locale Bot Komutları",
+        "welcome": "Dilinizde hoş geldin mesajı gösterir",
+        "hello": "Kullanıcı adınızla merhaba der",
+        "goodbye": "Dilinizde hoşçakal der",
+        "setlang": "Dil tercihinizi değiştirir",
+        "profile": "Profil bilgilerinizi gösterir",
+        "languages": "Mevcut dilleri gösterir"
+    },
+    "bot_info": {
+        "title": "🤖 Bot Bilgileri",
+        "name": "Bot Adı",
+        "servers": "Sunucular",
+        "users": "Kullanıcılar",
+        "uptime": "Çalışma Süresi"
+    }
+}

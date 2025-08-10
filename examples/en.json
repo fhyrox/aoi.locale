@@ -1,0 +1,37 @@
+{
+    "welcome": "Welcome to our server!",
+    "goodbye": "Goodbye, see you later!",
+    "hello": "Hello {user}!",
+    "error": "An error occurred!",
+    "success": "Operation completed successfully!",
+    "available_languages": "Available Languages",
+    "current_language": "Current Language",
+    "your_language": "Your Language",
+    "no_permission": "You don't have permission to use this command!",
+    "addlang_usage": "Usage: 1addlang <code> <welcome message>",
+    "language_added": "Language successfully added",
+    "ping_response": "🏓 Pong! {ping}ms",
+    "server_info": "Welcome {user} to {server} server!",
+    "user": {
+        "profile": {
+            "name": "User: {user}",
+            "level": "Level: {level}"
+        }
+    },
+    "help": {
+        "title": "🌍 aoi.locale Bot Commands",
+        "welcome": "Shows welcome message in your language",
+        "hello": "Says hello with your username",
+        "goodbye": "Says goodbye in your language",
+        "setlang": "Changes your language preference",
+        "profile": "Shows your profile information",
+        "languages": "Shows available languages"
+    },
+    "bot_info": {
+        "title": "🤖 Bot Information",
+        "name": "Bot Name",
+        "servers": "Servers",
+        "users": "Users",
+        "uptime": "Uptime"
+    }
+}

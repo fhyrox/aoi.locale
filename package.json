@@ -1,0 +1,32 @@
+{
+    "name": "aoi.locale",
+    "version": "1.0.0",
+    "description": "Internationalization (i18n) support module for aoi.js",
+    "main": "lib/core/AoiLocale.js",
+    "keywords": [
+        "aoi.js",
+        "i18n",
+        "locale",
+        "internationalization",
+        "discord-bot"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "fhyrox",
+    "license": "MIT",
+    "dependencies": {
+        "aoi.js": "^6.10.3"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fhyrox/aoi.locale.git"
+    },
+    "bugs": {
+        "url": "https://github.com/fhyrox/aoi.locale/issues"
+    },
+    "homepage": "https://github.com/fhyrox/aoi.locale#readme"
+}
